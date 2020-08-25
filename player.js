@@ -6,7 +6,9 @@ class Player{
         this.y= 150;
         this.gravity=0.3;
         this.velocity=0;
+        this.health = 3;
         this.image;
+
     }
 preloadPlayer(){
 
@@ -25,11 +27,12 @@ drawPlayer(){
 
 // this keeps him on the floor 
 
-   if(this.y <= 0){
-       console.log('you flew too high')
+   if(this.y < 0){
+    //    console.log('you flew too high')
       this.y = 0;
    }
 // this keeps him from leaving the top of the screen 
+
   image(this.image,this.x, this.y, this.height,this.width);
   }
 
@@ -37,9 +40,17 @@ jump(){
     console.log('this will be the jump');
     //this.gravity = -0.4;
     this.velocity= -10;
-    // if (this.y === height - this.height){
-      
-    // }
+    // if (this.y === height - this.height){}
     // this if statement doesnt allow it to double jump ! 
   }
+
+lifeLost(){
+    this.health -= 1;
+       if (this.health > 0){
+           return `player has one life`  
+       } else {
+           return `player has died`
+       }  
+
+}
 }
