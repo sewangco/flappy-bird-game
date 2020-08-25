@@ -11,7 +11,8 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(WIDTH, HEIGHT);
+    const canvas = createCanvas(WIDTH, HEIGHT);
+    canvas.parent('canvas-holder');
     game.setupGame();
 }
 

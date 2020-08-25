@@ -3,6 +3,36 @@ h1 {
     color: white;
 }
 
+#menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+  }
+
+  #canvas-holder {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  
+}
+#score {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+#title {
+    padding-bottom: 50px;
+}
+  
 button {
     border: none;
     font-family: "Spartan", sans-serif;
@@ -10,6 +40,12 @@ button {
     font-size: 1.5em;
 
   }
+#score {
+    display: none;
+    text-align: center;
+    font-size: 5em;
+    margin: 30px;
+}
 
 body {
     display: flex;
@@ -17,5 +53,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: "Spartan", sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    background-size: cover;
     background-color: #c8dad3;
   }
