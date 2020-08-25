@@ -37,20 +37,22 @@ drawPlayer(){
   }
 
 jump(){
-    console.log('this will be the jump');
+    //console.log('this will be the jump');
     //this.gravity = -0.4;
     this.velocity= -10;
     // if (this.y === height - this.height){}
     // this if statement doesnt allow it to double jump ! 
   }
 
-lifeLost(){
-    this.health -= 1;
-       if (this.health > 0){
-           return `player has one life`  
-       } else {
-           return `player has died`
-       }  
 
-}
+
+// lifeLost(){
+//     this.health -= 1;
+//        if (this.health > 0){
+//            return `player has one life`  
+//        } else {
+//            return `player has died`
+//        }  
+
+// }
 }

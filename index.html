@@ -8,13 +8,23 @@
     <title>Esther's flappy bird adventure</title>
 
 </head>
-<body>
-    <h1>
-        <img src="/style/arcade-font-writer.png">
-    </h1>
-    <div class='score'>
-        <img src='/style/arcade-font-writer (2).png'>
+<body> 
+    <div id="menu">
+        <div id='title'>
+                <img src="/style/arcade-font-writer.png">
+        </div>  
+        <button id="startGame">Start Game</button>
     </div>
+
+    <div class='score'>
+        
+    </div>
+    <div id="canvas" style="text-align: center; z-index:1;"></div>
+    <div id="score">
+        <!-- <img src='/style/arcade-font-writer (2).png'> -->
+        Current Score : 0
+    </div>
+
     <script src="constants.js"></script>
     <script src='/obstable.js'></script>
     <script src='/background.js'></script>

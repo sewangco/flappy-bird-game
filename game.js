@@ -47,33 +47,27 @@ setupGame(){
     this.background.images = this.backgroundImgs;
     this.player= new Player();
     this.player.image= this.playerImg;
-    this.obstacle = new Obstacle();
-    this.obstacle.imageTop = this.pipeImgTop
-    this.obstacle.imageBot = this.pipeImgBot
-    
+    // this.obstacle.imageTop = this.pipeImgTop
+    // this.obstacle.imageBot = this.pipeImgBot
 }
 
 drawGame(){
 this.background.drawBackground();
 this.player.drawPlayer();
-this.obstacle.drawObstacle();
-if (frameCount%60 === 0){
-    this.obstacles.push(new Obstacle(this.obstacle.imageTop));
+if (frameCount === 30 || frameCount%260 === 0){
+    this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot));
+}
+this.obstacles.forEach(obstacle => {
+    obstacle.drawObstacle();
+  });
+
+this.obstacles= this.obstacles.filter((obstacle)=> {
+    if (obstacle.collision(this.player)){
+      return false
+    } else{
+      return true
+    }
+  });
 }
 
-}
-// if (frameCount%60===0){
-//     this.obstacles.push(new Obstacle(this.pipeImg));
-//   }
-  
-//   this.obstacles.forEach(obstacle => {
-//     obstacle.drawObstacle();
-//   });
-// this.obstacles= this.obstacles.filter((obstacle)=> {
-//     if (obstacle.collision(this.player)){
-//       return false
-//     } else{
-//       return true
-//     }
-//   });
 }
