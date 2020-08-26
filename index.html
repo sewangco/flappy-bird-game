@@ -11,28 +11,21 @@
 <body> 
     
     <div id="menu">
-        <div id='canvas-holder'>
-            <div id='title'>
-                <img src="style/arcade-font-writer.png">        
-            </div>  
-            <!-- <button id="startGame">Start Game</button> -->
-        </div>
         
-        <div id="score">
-            Current Score : 0
+        <div id='canvas-holder'>
+            <div id='title'><img src="style/arcade-font-writer.png"></div>  
         </div>
+         
+        <div id="score-display" > Current Score :  <span id="score"> 0</span></div>
     </div>
-    <!-- <div id="canvas" style="text-align: center; z-index:1;"></div> -->
-    
-
     
     <!-- <img src='/style/arcade-font-writer (2).png'> -->
 
     <script src="constants.js"></script>
-    <script src='obstacle.js'></script>
     <script src='background.js'></script>
     <script src='player.js'></script>
     <script src='game.js'></script>
     <script src='main.js'></script>
+    <script src='obstacle.js'></script>
 </body>
 </html>

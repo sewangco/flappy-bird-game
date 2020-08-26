@@ -47,16 +47,21 @@ this.backgroundImgs= [
     this.pipeImgTop = loadImage("obstacles/PixelArt-top.png");
     this.pipeImgBot = loadImage("obstacles/PixelArt-bottomnew.png");
     this.startImg= loadImage('style/start.png');
-    this.endImg= loadImage('/style/gameover.png')
-    
+    this.endImg= loadImage('/style/gameover2.png') 
+    this.restartImg= loadImage("/style/restart.png") 
 }
+
 setupGame(){
     this.background= new Background()
     this.background.images = this.backgroundImgs;
     this.player= new Player();
     this.player.image= this.playerImg;
+    this.obstacle= new Obstacle();
     // this.obstacle.imageTop = this.pipeImgTop
     // this.obstacle.imageBot = this.pipeImgBot
+}
+randomSize() {
+    return Math.floor(Math.random()*(HEIGHT- HEIGHT / 2));
 }
 
 drawGame(){
@@ -69,8 +74,12 @@ if(this.gameLevel === 0) {
 } else if (this.gameLevel === 1){
     this.background.drawBackground();
     this.player.drawPlayer();
-    if (frameCount === 30 || frameCount%260 === 0){
-        this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot));
+    if (frameCount === 30 || frameCount%230 === 0){
+        let topSize = this.randomSize();
+        while(topSize < 100 || topSize > 200) {
+            topSize = this.randomSize();
+        }
+        this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot, topSize));
     }
 
     this.obstacles.forEach(obstacle => {
@@ -84,14 +93,16 @@ if(this.gameLevel === 0) {
           return true
         }
       });
+
 } else if (this.gameLevel === 2){
-    image(this.endImg,0,0);
+    image(this.endImg,300,210);
+    image(this.restartImg,155, 340);
+    score.innerText= 0
+
+    
 }
 
-
 }
-
-
 
 // isGameOver(){
 //     if (this.obstacle.collision()){
@@ -99,3 +110,4 @@ if(this.gameLevel === 0) {
 //         console.log('isGameOver');
 //     }
 }
+

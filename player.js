@@ -39,7 +39,7 @@ drawPlayer(){
 jump(){
     //console.log('this will be the jump');
     //this.gravity = -0.4;
-    this.velocity= -10;
+    this.velocity= -8;
     // if (this.y === height - this.height){}
     // this if statement doesnt allow it to double jump ! 
   }
