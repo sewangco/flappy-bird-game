@@ -46,9 +46,11 @@ this.backgroundImgs= [
     this.playerImg =loadImage('./character/oie_2416851kxChZMTD.gif')
     this.pipeImgTop = loadImage("./obstacles/PixelArt-top.png");
     this.pipeImgBot = loadImage("./obstacles/PixelArt-bottomnew.png");
-    this.startImg= loadImage('./style/start.png');
+    this.startImg= loadImage('./style/start.png')
     this.endImg= loadImage('./style/gameover2.png') 
-    this.restartImg= loadImage("./style/restart.png") 
+    this.restartImg= loadImage("./style/restart2.png")
+    this.yourScoreImg= loadImage('./style/score2.png') 
+    this.spacebarImg= loadImage('./style/spacebar2.png')
 }
 
 setupGame(){
@@ -69,7 +71,8 @@ if(this.gameLevel === 0) {
     clear()
     // this.background.drawBackground();
     this.player.drawPlayer();
-    image(this.startImg,180,250);
+    image(this.startImg,150,250);
+    image(this.spacebarImg,350,350);
     score.parentNode.style.visibility = "hidden";
 
 
@@ -99,10 +102,12 @@ if(this.gameLevel === 0) {
 
 } else if (this.gameLevel === 2){
     
-    image(this.endImg, 90,100)
-    text(currentScore, 110, 100)
+    image(this.yourScoreImg, 340,100)
+    textSize(50);
+    fill(37, 78, 231);
+    text(currentScore, 615, 130);
     image(this.endImg,300,210);
-    image(this.restartImg,155, 340);
+    image(this.restartImg,303, 340);
     
 
 }

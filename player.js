@@ -2,9 +2,9 @@ class Player{
     constructor(){
         this.height= 120;
         this.width= 90;
-        this.x = 0;
+        this.x = 60;
         this.y= 150;
-        this.gravity=0.3;
+        this.gravity=0.2;
         this.velocity=0;
         this.health = 3;
         this.image;
@@ -38,8 +38,8 @@ drawPlayer(){
 
 jump(){
     //console.log('this will be the jump');
-    //this.gravity = -0.4;
-    this.velocity= -8;
+    this.gravity = 0.3;
+    this.velocity= -7;
     // if (this.y === height - this.height){}
     // this if statement doesnt allow it to double jump ! 
   }

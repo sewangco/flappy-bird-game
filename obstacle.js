@@ -1,6 +1,6 @@
 class Obstacle{
     constructor(imgTop, imgBot, top){
-        this.gap = HEIGHT / 2;
+        this.gap = HEIGHT / 3;
         this.top= top; // Math.floor(Math.random()*(HEIGHT- this.gap));
         this.bottom= HEIGHT - (this.top + this.gap);
         this.x = WIDTH;
@@ -15,7 +15,7 @@ preloadObstacle(){}
 setUpObstacle(){}
    
 collision(playerInfo) {
-  if((playerInfo.y +(playerInfo.height/2)< this.top || playerInfo.y + (playerInfo.height/2) > (height - this.bottom))&& playerInfo.x + playerInfo.width === this.x){
+  if((playerInfo.y +(playerInfo.height/2) < this.top || playerInfo.y + (playerInfo.height/2) > (height - this.bottom))&& playerInfo.x + playerInfo.width === this.x){
     console.log('you have collided');
     game.gameLevel = 2;
     return true 
