@@ -24,13 +24,16 @@ function keyPressed() {
     if (keyCode=== 32){
         game.player.jump();
     }
+    if (keyCode=== 13){
+        game.gameLevel++
+    }
 
 const gameOverFunc = () => {
         gameOver = true;
         startGame = false;
         // document.getElementById("score").innerText = `Score :  ${currentScore}`;
         // text("GAME OVER", WIDTH - 2500 / 4, HEIGHT / 4);
-        // button = createButton("Restart Game");
+        //button = createButton("Restart Game");
         // button.position(WIDTH / 2 + 600 / 4, HEIGHT - 200 / 4 / 2);
         // button.mousePressed(function() {
         //   location.reload();

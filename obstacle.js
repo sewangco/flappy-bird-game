@@ -17,18 +17,28 @@ setUpObstacle(){}
 collision(playerInfo) {
     //console.log(playerInfo.y, this.top, (height - this.bottom));
   if((playerInfo.y < this.top || playerInfo.y > (height - this.bottom))&& playerInfo.x === this.x){
-      console.log('you have collided');
-  }
-
-
+    console.log('you have collided');
+    this.game
+    return true 
+  
+  // }else if( playerInfo.x === this.x && playerInfo.y > this.top && playerInfo.y > (height - this.bottom)) {
+  //   const score= document.querySelector('#score')
+  //   currentScore++;
+  //   score.innerText= `current score: ${score}`
+  //   console.log(score)
+  // }
+}
 }
 
+  ends() {
+    if (this.x < -this.width) {
+      return true;
+    }
+  }
 drawObstacle(){
     this.x-= this.speed;
     // console.log(this.imageBot)
     image(this.imageTop,this.x,0, this.width, this.top);
     image(this.imageBot,this.x,HEIGHT- this.bottom, this.width, this.bottom);
     }
-
-
 }
