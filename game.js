@@ -13,42 +13,42 @@ class Game {
 preloadGame(){
 this.backgroundImgs= [
         {
-        src: loadImage('Layers/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg'),
+        src: loadImage('./Layers/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg'),
         x: 0,
         speed: 0,
       },
-      {src: loadImage('Layers/cloud_lonely.png'),
+      {src: loadImage('./Layers/cloud_lonely.png'),
       x:0,
       speed:3,
     },
-      {src: loadImage('Layers/clouds_bg.png'),
+      {src: loadImage('./Layers/clouds_bg.png'),
         x:0,
         speed:2,
       },
-      {src: loadImage('Layers/glacial_mountains.png'),
+      {src: loadImage('./Layers/glacial_mountains.png'),
         x:0,
         speed:2,
       },
-      {src: loadImage('Layers/clouds_mg_3.png'),
+      {src: loadImage('./Layers/clouds_mg_3.png'),
         x:0,
         speed:3,
       },
-      {src: loadImage('Layers/clouds_mg_2.png'),
+      {src: loadImage('./Layers/clouds_mg_2.png'),
         x:0,
         speed:3,
       },
-      {src: loadImage('Layers/clouds_mg_1.png'),
+      {src: loadImage('./Layers/clouds_mg_1.png'),
         x:0,
         speed:4,
       },
     ];
 
-    this.playerImg =loadImage('/character/oie_2416851kxChZMTD.gif')
-    this.pipeImgTop = loadImage("obstacles/PixelArt-top.png");
-    this.pipeImgBot = loadImage("obstacles/PixelArt-bottomnew.png");
-    this.startImg= loadImage('style/start.png');
-    this.endImg= loadImage('/style/gameover2.png') 
-    this.restartImg= loadImage("/style/restart.png") 
+    this.playerImg =loadImage('./character/oie_2416851kxChZMTD.gif')
+    this.pipeImgTop = loadImage("./obstacles/PixelArt-top.png");
+    this.pipeImgBot = loadImage("./obstacles/PixelArt-bottomnew.png");
+    this.startImg= loadImage('./style/start.png');
+    this.endImg= loadImage('./style/gameover2.png') 
+    this.restartImg= loadImage("./style/restart.png") 
 }
 
 setupGame(){
@@ -70,13 +70,16 @@ if(this.gameLevel === 0) {
     // this.background.drawBackground();
     this.player.drawPlayer();
     image(this.startImg,180,250);
+    score.parentNode.style.visibility = "hidden";
+
 
 } else if (this.gameLevel === 1){
     this.background.drawBackground();
     this.player.drawPlayer();
-    if (frameCount === 30 || frameCount%230 === 0){
+    score.parentNode.style.visibility = "visible";
+    if (frameCount == 20 || frameCount%230 === 0){
         let topSize = this.randomSize();
-        while(topSize < 100 || topSize > 200) {
+        while(topSize < 110 || topSize > 200) {
             topSize = this.randomSize();
         }
         this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot, topSize));
@@ -95,12 +98,12 @@ if(this.gameLevel === 0) {
       });
 
 } else if (this.gameLevel === 2){
+    
+    image(this.endImg, 90,100)
+    text(currentScore, 110, 100)
     image(this.endImg,300,210);
     image(this.restartImg,155, 340);
-    score.innerText= 0
-
     
-}
 
 }
 
@@ -110,4 +113,4 @@ if(this.gameLevel === 0) {
 //         console.log('isGameOver');
 //     }
 }
-
+}

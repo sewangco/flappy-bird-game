@@ -20,7 +20,7 @@ collision(playerInfo) {
     game.gameLevel = 2;
     return true 
   }
-  if( playerInfo.x === this.x && playerInfo.y > this.top && playerInfo.y < (height - this.bottom)) {
+  if( playerInfo.x + playerInfo.width === this.x && playerInfo.y >= this.top && playerInfo.y < (height - this.bottom)) {
     const score= document.querySelector('#score')
     console.log(score.innerText)
     currentScore++;

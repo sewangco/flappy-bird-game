@@ -26,6 +26,8 @@ function keyPressed() {
     }
     if (keyCode=== 13 && (game.gameLevel == 0 || game.gameLevel == 2)){
         game.gameLevel = 1
+        score.innerText= 0;
+        currentScore = 0;
     }
 }
 // const gameOverFunc = () => {
