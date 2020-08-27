@@ -52,6 +52,7 @@ this.backgroundImgs= [
     this.yourScoreImg= loadImage('./style/score2.png') 
     this.spacebarImg= loadImage('./style/spacebarjump2.png')
     this.startPageImg= loadImage('./style/newstartpage.png')
+    // this.gameOverImg= loadImage('./style/endGame.png')
 }
 
 setupGame(){
@@ -111,8 +112,8 @@ if(this.gameLevel === 0) {
     fill(255,255,255);
     textFont('My Custom Font')
     text(currentScore, 615, 130);
-    image(this.endImg,300,210);
-    image(this.restartImg,303, 340);
+    image(this.endImg,308,210);
+    image(this.restartImg,309, 300);
     
 
 }
