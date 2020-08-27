@@ -50,7 +50,8 @@ this.backgroundImgs= [
     this.endImg= loadImage('./style/gameover2.png') 
     this.restartImg= loadImage("./style/restart2.png")
     this.yourScoreImg= loadImage('./style/score2.png') 
-    this.spacebarImg= loadImage('./style/spacebar2.png')
+    this.spacebarImg= loadImage('./style/spacebarjump2.png')
+    this.startPageImg= loadImage('./style/newstartpage.png')
 }
 
 setupGame(){
@@ -71,8 +72,9 @@ if(this.gameLevel === 0) {
     clear()
     // this.background.drawBackground();
     this.player.drawPlayer();
-    image(this.startImg,150,250);
-    image(this.spacebarImg,350,350);
+    image(this.startImg,150,100);
+    image(this.spacebarImg,200,105);
+    // image(this.startPageImg,235,100);
     score.parentNode.style.visibility = "hidden";
 
 
@@ -81,11 +83,11 @@ if(this.gameLevel === 0) {
     this.player.drawPlayer();
     score.parentNode.style.visibility = "visible";
     if (frameCount == 20 || frameCount%230 === 0){
-        let topSize = this.randomSize();
-        while(topSize < 110 || topSize > 200) {
-            topSize = this.randomSize();
+        let top = this.randomSize();
+        while(top < 110 || top > 200) {
+            top = this.randomSize();
         }
-        this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot, topSize));
+        this.obstacles.push(new Obstacle(this.pipeImgTop,this.pipeImgBot, top));
     }
 
     this.obstacles.forEach(obstacle => {
@@ -94,6 +96,7 @@ if(this.gameLevel === 0) {
 
     this.obstacles= this.obstacles.filter((obstacle)=> {
         if (obstacle.collision(this.player)){
+            //console.log("mistakes were made")
           return false
         } else{
           return true
@@ -102,9 +105,11 @@ if(this.gameLevel === 0) {
 
 } else if (this.gameLevel === 2){
     
-    image(this.yourScoreImg, 340,100)
-    textSize(50);
-    fill(37, 78, 231);
+    image(this.yourScoreImg, 340,94)
+    textSize(60);
+    // fill(173, 17, 44);
+    fill(255,255,255);
+    textFont('My Custom Font')
     text(currentScore, 615, 130);
     image(this.endImg,300,210);
     image(this.restartImg,303, 340);

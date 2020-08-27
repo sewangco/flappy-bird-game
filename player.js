@@ -1,7 +1,7 @@
 class Player{
     constructor(){
         this.height= 120;
-        this.width= 90;
+        this.width= 70;
         this.x = 60;
         this.y= 150;
         this.gravity=0.2;
@@ -33,6 +33,8 @@ drawPlayer(){
    }
 // this keeps him from leaving the top of the screen 
 
+// fill(255)
+// rect(this.x, this.y, this.height,this.width);
   image(this.image,this.x, this.y, this.height,this.width);
   }
 

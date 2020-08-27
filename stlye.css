@@ -1,11 +1,16 @@
 
+@font-face {
+    font-family: "My Custom Font";
+    src: url('./style/ARCADE.TTF') format("truetype");
+}
+
 h1 {
     color: white;
 }
 
 #menu {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -22,23 +27,28 @@ h1 {
 }
 
 #score-display {
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     flex-direction: row;
+    font-family: "My Custom Font";
     align-items: center;
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 30px;
     color: white;
-    padding-left: 15px;
 }
 
 #score {
-    padding-right: 30px;
+    padding-left: 5px;
+    display: inline-block;
+    font-family:"My Custom Font";
 }
 #title {
-    padding: 50px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
 #startGame {
