@@ -39,7 +39,7 @@ function keyPressed() {
 
 function mouseClicked(){
     if (game.gameLevel=== 0&& !start){
-        game.backgroundSound.play();
+        game.backgroundSound.loop();
     start=true}
 
 }

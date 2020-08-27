@@ -11,9 +11,11 @@ class Game {
     }
 
 preloadGame(){
-this.backgroundSound =loadSound('./music/top_5_gaming_background_songs_copyright_free_fODMBHMByoK-gucZ8xFq.mp3');
+// this.backgroundSound =loadSound('./music/top_5_gaming_background_songs_copyright_free_fODMBHMByoK-gucZ8xFq.mp3');
+this.backgroundSound =loadSound('./style/music-audiotrimmer.mp3');
+this.coinPlay= loadSound('./style/mario-coin-sound-effect.mp3');
 this.backgroundImgs= [
-        {
+        {   
         src: loadImage('./Layers/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg'),
         x: 0,
         speed: 0,
@@ -115,7 +117,8 @@ if(this.gameLevel === 0) {
     text(currentScore, 615, 130);
     image(this.endImg,308,210);
     image(this.restartImg,309, 300);
-    this.player.y = 0
+    this.player.y = 0;
+    this.player.velocity=0;
     this.backgroundSound.pause()
     start=false
 

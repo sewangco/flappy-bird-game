@@ -32,6 +32,7 @@ let xCollision=(this.x>playerInfo.x && this.x<playerInfo.x+playerInfo.width)||(t
     console.log(this.top); */
     currentScore++;
     score.innerText= currentScore
+    game.coinPlay.play()
   }
   if (playerInfo.y + playerInfo.height >= 600){
     game.gameLevel = 2;
