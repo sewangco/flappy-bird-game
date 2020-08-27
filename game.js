@@ -11,8 +11,7 @@ class Game {
     }
 
 preloadGame(){
-// this.backgroundSound =loadSound('./music/top_5_gaming_background_songs_copyright_free_fODMBHMByoK-gucZ8xFq.mp3');
-this.backgroundSound =loadSound('./style/music-audiotrimmer.mp3');
+this.backgroundSound =loadSound('./music/top_5_gaming_background_songs_copyright_free_fODMBHMByoK-gucZ8xFq.mp3');
 this.coinPlay= loadSound('./style/mario-coin-sound-effect.mp3');
 this.backgroundImgs= [
         {   
