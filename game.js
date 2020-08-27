@@ -11,6 +11,7 @@ class Game {
     }
 
 preloadGame(){
+this.backgroundSound =loadSound('./music/top_5_gaming_background_songs_copyright_free_fODMBHMByoK-gucZ8xFq.mp3');
 this.backgroundImgs= [
         {
         src: loadImage('./Layers/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg'),
@@ -51,8 +52,7 @@ this.backgroundImgs= [
     this.restartImg= loadImage("./style/restart2.png")
     this.yourScoreImg= loadImage('./style/score2.png') 
     this.spacebarImg= loadImage('./style/spacebarjump2.png')
-    this.startPageImg= loadImage('./style/newstartpage.png')
-    // this.gameOverImg= loadImage('./style/endGame.png')
+    this.startPageImg= loadImage('./style/NEWNEWSTART.png')
 }
 
 setupGame(){
@@ -72,18 +72,19 @@ drawGame(){
 if(this.gameLevel === 0) {
     clear()
     // this.background.drawBackground();
-    this.player.drawPlayer();
-    image(this.startImg,150,100);
-    image(this.spacebarImg,200,105);
-    // image(this.startPageImg,235,100);
+    // this.player.drawPlayer();
+    // image(this.startImg,150,100);
+    // image(this.spacebarImg,200,105);
+    image(this.startPageImg,120,50);
     score.parentNode.style.visibility = "hidden";
+    // this.backgroundSound.play();
 
 
 } else if (this.gameLevel === 1){
     this.background.drawBackground();
     this.player.drawPlayer();
     score.parentNode.style.visibility = "visible";
-    if (frameCount == 20 || frameCount%230 === 0){
+    if (frameCount == 20 || frameCount%200 == 0){
         let top = this.randomSize();
         while(top < 110 || top > 200) {
             top = this.randomSize();
@@ -114,14 +115,12 @@ if(this.gameLevel === 0) {
     text(currentScore, 615, 130);
     image(this.endImg,308,210);
     image(this.restartImg,309, 300);
-    
+    this.player.y = 0
+    this.backgroundSound.pause()
+    start=false
 
 }
 
-// isGameOver(){
-//     if (this.obstacle.collision()){
-//         window.alert("game over");
-//         console.log('isGameOver');
-//     }
+
 }
 }

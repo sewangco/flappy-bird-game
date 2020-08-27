@@ -1,14 +1,16 @@
 const game = new Game();
 const WIDTH = 4000 / 4;
 const HEIGHT = 2000 / 4;
-
+let start=false
 let currentScore = 0;
 // let startGame = false;
 // let gameOver = false;
 
 function preload() {
     game.preloadGame();
+   
 }
+
 
 function setup() {
     const canvas = createCanvas(WIDTH, HEIGHT);
@@ -29,7 +31,19 @@ function keyPressed() {
         score.innerText= 0;
         currentScore = 0;
     }
+    if(keyCode==13 && !start){
+        game.backgroundSound.play();
+        start=true   
+    }
 }
+
+function mouseClicked(){
+    if (game.gameLevel=== 0&& !start){
+        game.backgroundSound.play();
+    start=true}
+
+}
+
 // const gameOverFunc = () => {
 //         gameOver = true;
 //         startGame = false;

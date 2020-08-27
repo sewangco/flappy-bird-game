@@ -32,7 +32,12 @@ let xCollision=(this.x>playerInfo.x && this.x<playerInfo.x+playerInfo.width)||(t
     console.log(this.top); */
     currentScore++;
     score.innerText= currentScore
-    
+  }
+  if (playerInfo.y + playerInfo.height >= 600){
+    game.gameLevel = 2;
+    return true 
+
+  }
   }
   // if((playerInfo.y + 30 < this.top || playerInfo.y + 90 > (height - this.bottom))&& (playerInfo.x + playerInfo.width === this.x || playerInfo.x === this.x )){
   //   if(playerInfo.x + playerInfo.width >= this.x && playerInfo.x + playerInfo.width < this.x + this.width ){
@@ -42,7 +47,7 @@ let xCollision=(this.x>playerInfo.x && this.x<playerInfo.x+playerInfo.width)||(t
   //   }
   //}
   
-}
+
 
 
 

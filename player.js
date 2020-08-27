@@ -21,9 +21,9 @@ drawPlayer(){
     this.y += this.velocity
     console.log(height);
     
-  if (this.y >= height - this.height ){   
-    this.y = height - this.height;
-  }
+//   if (this.y >= height - this.height ){   
+//     this.y = height - this.height;
+//   }
 
 // this keeps him on the floor 
 
@@ -46,15 +46,4 @@ jump(){
     // this if statement doesnt allow it to double jump ! 
   }
 
-
-
-// lifeLost(){
-//     this.health -= 1;
-//        if (this.health > 0){
-//            return `player has one life`  
-//        } else {
-//            return `player has died`
-//        }  
-
-// }
 }
